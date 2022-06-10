@@ -1,13 +1,13 @@
-package com.example.rclean
+package com.example.rclean.entities.local
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.rclean.entities.Director
-import com.example.rclean.entities.School
-import com.example.rclean.entities.Student
-import com.example.rclean.entities.Subject
+import com.example.rclean.entities.data.Director
+import com.example.rclean.entities.data.School
+import com.example.rclean.entities.data.Student
+import com.example.rclean.entities.data.Subject
 import com.example.rclean.entities.relations.StudentSubjectCrossRef
 
 @Database(

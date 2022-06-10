@@ -2,18 +2,34 @@ package com.example.rclean
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
-import com.example.rclean.entities.Director
-import com.example.rclean.entities.School
-import com.example.rclean.entities.Student
-import com.example.rclean.entities.Subject
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.example.rclean.adapter.HomePagedAdapter
+import com.example.rclean.databinding.ActivityMainBinding
+import com.example.rclean.entities.data.Director
+import com.example.rclean.entities.data.School
+import com.example.rclean.entities.data.Student
+import com.example.rclean.entities.data.Subject
+import com.example.rclean.entities.local.SchoolDatabase
 import com.example.rclean.entities.relations.StudentSubjectCrossRef
+import com.example.rclean.viewmodel.HomeViewModel
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
+    private lateinit var mAdapter: HomePagedAdapter
+    private val viewModel: HomeViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        setupRecyclerView()
+        loadingData()
 
         val dao = SchoolDatabase.getInstance(this).schoolDao
 
@@ -65,4 +81,30 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
+    private fun setupRecyclerView() {
+
+        mAdapter = HomePagedAdapter()
+
+        binding.homeRv.apply {
+            adapter = mAdapter
+            layoutManager = StaggeredGridLayoutManager(
+                2, StaggeredGridLayoutManager.VERTICAL
+            )
+            setHasFixedSize(true)
+        }
+
+    }
+
+    private fun loadingData() {
+        lifecycleScope.launch {
+            viewModel.listData.collect { pagingData ->
+                mAdapter.submitData(pagingData)
+            }
+
+        }
+    }
 }
+
+
+

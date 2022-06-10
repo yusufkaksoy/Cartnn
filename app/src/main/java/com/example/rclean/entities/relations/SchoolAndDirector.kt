@@ -2,8 +2,8 @@ package com.example.rclean.entities.relations
 
 import androidx.room.Embedded
 import androidx.room.Relation
-import com.example.rclean.entities.Director
-import com.example.rclean.entities.School
+import com.example.rclean.entities.data.Director
+import com.example.rclean.entities.data.School
 
 data class SchoolAndDirector(
 
