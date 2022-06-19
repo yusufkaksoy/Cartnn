@@ -3,9 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/yaksoy/AndroidStudioProjects/Rclean/app/src/main/res/font/font.xml" value="0.378974358974359" />
+        <entry key="..\:/Users/yaksoy/AndroidStudioProjects/Rclean/app/src/main/res/layout/activity_characters.xml" value="0.3546875" />
         <entry key="..\:/Users/yaksoy/AndroidStudioProjects/Rclean/app/src/main/res/layout/activity_main.xml" value="0.17604166666666668" />
         <entry key="..\:/Users/yaksoy/AndroidStudioProjects/Rclean/app/src/main/res/layout/character_layout.xml" value="0.3546875" />
+        <entry key="..\:/Users/yaksoy/AndroidStudioProjects/Rclean/app/src/main/res/layout/character_layoutx.xml" value="0.3546875" />
         <entry key="..\:/Users/yaksoy/AndroidStudioProjects/Rclean/app/src/main/res/layout/fragment_all_char.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/yaksoy/AndroidStudioProjects/Rclean/app/src/main/res/layout/fragment_character_detail.xml" value="0.3546875" />
         <entry key="..\:/Users/yaksoy/AndroidStudioProjects/Rclean/app/src/main/res/layout/fragment_home.xml" value="0.5" />
       </map>
     </option>

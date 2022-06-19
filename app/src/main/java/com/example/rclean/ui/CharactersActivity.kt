@@ -1,32 +1,35 @@
-package com.example.rclean
+package com.example.rclean.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import com.example.rclean.adapter.HomePagedAdapter
-import com.example.rclean.databinding.ActivityMainBinding
+import com.example.rclean.databinding.ActivityCharactersBinding
+
+
 import com.example.rclean.entities.data.Director
 import com.example.rclean.entities.data.School
 import com.example.rclean.entities.data.Student
 import com.example.rclean.entities.data.Subject
 import com.example.rclean.entities.local.SchoolDatabase
 import com.example.rclean.entities.relations.StudentSubjectCrossRef
-import com.example.rclean.viewmodel.HomeViewModel
+import com.example.rclean.ui.charactersScreen.CharactersAdapter
+import com.example.rclean.ui.charactersScreen.CharactersViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity() {
+class CharactersActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
-    private lateinit var mAdapter: HomePagedAdapter
-    private val viewModel: HomeViewModel by viewModels()
+
+    private lateinit var binding: ActivityCharactersBinding
+    private lateinit var mAdapter: CharactersAdapter
+    private val viewModel: CharactersViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityCharactersBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setupRecyclerView()
         loadingData()
@@ -84,12 +87,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupRecyclerView() {
 
-        mAdapter = HomePagedAdapter()
+        mAdapter = CharactersAdapter()
 
         binding.homeRv.apply {
             adapter = mAdapter
             layoutManager = StaggeredGridLayoutManager(
-                2, StaggeredGridLayoutManager.VERTICAL
+                1, StaggeredGridLayoutManager.VERTICAL
             )
             setHasFixedSize(true)
         }
