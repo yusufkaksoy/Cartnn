@@ -1,8 +1,12 @@
 package com.example.rclean.ui
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.AttributeSet
+import android.view.View
 import androidx.activity.viewModels
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.rclean.databinding.ActivityCharactersBinding
@@ -83,7 +87,10 @@ class CharactersActivity : AppCompatActivity() {
             val schoolWithStudents = dao.getSchoolWithStudents("FSM Lisesi")
         }
 
+
+
     }
+
 
     private fun setupRecyclerView() {
 
@@ -107,6 +114,8 @@ class CharactersActivity : AppCompatActivity() {
 
         }
     }
+
+
 }
 
 
