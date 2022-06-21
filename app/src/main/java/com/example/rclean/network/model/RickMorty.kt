@@ -11,7 +11,7 @@ data class RickMorty(
     val id : Int,
 
     val gender: String,
-    //TODO type converter add
+
     val location: Location,
     val image: String,
     @PrimaryKey(autoGenerate = false)

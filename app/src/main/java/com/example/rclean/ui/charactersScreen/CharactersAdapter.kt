@@ -10,9 +10,7 @@ import com.example.rclean.ui.charactersScreen.CharactersAdapter.*
 import com.example.rclean.databinding.CharacterLayoutBinding
 import com.example.rclean.network.model.RickMorty
 
-class CharactersAdapter: PagingDataAdapter<RickMorty, MyViewHolder>(diffCallback) {
-
-
+class CharactersAdapter: PagingDataAdapter<RickMorty, CharactersAdapter.MyViewHolder>(diffCallback) {
     inner class MyViewHolder(val binding : CharacterLayoutBinding):
     RecyclerView.ViewHolder(binding.root)
      companion object{

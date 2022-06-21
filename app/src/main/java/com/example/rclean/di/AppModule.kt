@@ -3,13 +3,11 @@ package com.example.rclean.di
 import android.content.Context
 import com.example.rclean.entities.local.CharactersDao
 import com.example.rclean.entities.local.CharactersDatabase
-import com.example.rclean.entities.local.SchoolDatabase
 import com.example.rclean.network.api.ApiService
 import com.example.rclean.util.Constants
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.qualifiers.ActivityContext
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit

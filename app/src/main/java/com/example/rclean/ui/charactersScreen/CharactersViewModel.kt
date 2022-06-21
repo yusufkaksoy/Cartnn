@@ -28,5 +28,5 @@ class CharactersViewModel @Inject constructor(private val apiService: ApiService
 
         charactersDao.getAllCharactersDao()
 
-    }.flow
+    }.flow.cachedIn(viewModelScope)
 }

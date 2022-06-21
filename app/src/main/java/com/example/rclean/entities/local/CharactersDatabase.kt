@@ -9,9 +9,8 @@ import com.example.rclean.network.model.RickMorty
 @TypeConverters(Converters::class)
 abstract class CharactersDatabase : RoomDatabase() {
     companion object {
-
         fun getInstance(context: Context): CharactersDatabase {
-            return Room.databaseBuilder(context, CharactersDatabase::class.java, "characters")
+            return Room.databaseBuilder(context, CharactersDatabase::class.java, "characters_db")
                 .build()
         }
     }

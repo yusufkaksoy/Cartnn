@@ -72,8 +72,6 @@ class CharactersRemoteMediator(
             return MediatorResult.Error(e)
         }
 
-        return MediatorResult.Success(endOfPaginationReached = true)
-
     }
 
     suspend fun getClosestRemoteKey(state: PagingState<Int, RickMorty>): CharactersRemoteKey? {

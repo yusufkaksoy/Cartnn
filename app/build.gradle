@@ -52,13 +52,14 @@ dependencies {
     //Room
     implementation "androidx.room:room-runtime:2.4.2"
     kapt "androidx.room:room-compiler:2.4.2"
-
-    // Kotlin Extensions and Coroutines support for Room
     implementation "androidx.room:room-ktx:2.4.2"
+    implementation "androidx.room:room-paging:2.4.2"
+
+
 
     // Coroutines
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2'
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1'
 
     // Coroutine Lifecycle Scopes
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1"
@@ -78,7 +79,9 @@ dependencies {
 
 
     //paging
-    implementation 'androidx.paging:paging-runtime-ktx:3.1.1'
+    implementation "androidx.paging:paging-runtime-ktx:3.2.0-alpha01"
+    implementation 'androidx.paging:paging-compose:1.0.0-alpha15'
+
 
     //coil
     implementation 'io.coil-kt:coil:1.1.1'
