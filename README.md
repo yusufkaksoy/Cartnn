@@ -1,4 +1,4 @@
-# RickAndMorty
+
 
 # Techs
 * Rick and Morty API 
